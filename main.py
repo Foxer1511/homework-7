@@ -18,20 +18,20 @@
 # Написати рекурсивну функцію, яка виводить N зірок у ряд, число N задає користувач.
 # Проілюструйте роботу функції прикладом. (Протестувати)
 
-# n = int(input("Enter number of stars "))
-# star = "*"
-# def n_stars(star, n):
-#
-#     if n == 1:
-#         return print(star, end="")
-#
-#     return print(star, end="") * n_stars(star, n - 1)
-#
-# try:
-#     print(n_stars(star, n))
-# except Exception as e:
-#     print()
-#     print(e)
+
+def print_stars(n):
+
+    if n <= 0:
+        return
+    else:
+        print("*", end="")
+        print_stars(n - 1)
+num_stars = int(input("Enter number of stars "))
+try:
+    print_stars(num_stars)
+except Exception as e:
+    print()
+    print(e)
 
 # #n_stars(star, 5) -> star * n_stars(star, 5-1)
 # #n_stars(star, 4) -> star * n_stars(star, 4-1)
